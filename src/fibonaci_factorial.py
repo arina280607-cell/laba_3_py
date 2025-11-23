@@ -11,12 +11,13 @@ def fibo(n: int) -> int:
 
 #фибоначчи рекурсивно
 def fibo_recursive(n):
-    if n == 1 or n == 2:
-        return 1
+    if n < 0:
+        raise ValueError('n must be positive')
+    if n <= 1:
+        return n
     else:
         return fibo_recursive(n-1) + fibo_recursive(n-2)
-n = int(input('Enter a number: '))
-print(fibo_recursive(n))
+
 
 #факториал
 def factorial(n: int) -> int:
@@ -38,5 +39,3 @@ def factorial_recursive(n: int) -> int:
         return 1
     else:
         return n * factorial_recursive(n-1)
-n = int(input("Enter a number: "))
-print(factorial_recursive(n))
