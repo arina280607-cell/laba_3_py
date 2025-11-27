@@ -1,5 +1,18 @@
+"""
+Модуль для вычисления чисел Фибоначчи и факториала.
+Реализованы итеративная и рекурсивная версии функций.
+"""
 #фибоначчи
 def fibo(n: int) -> int:
+    """
+        Вычисляет n-ое число Фибоначчи итеративным методом.
+        Args:
+            n (int): Номер числа Фибоначчи (должен быть неотрицательным)
+        Returns:
+            int: n-ое число Фибоначчи
+        Raises:
+            ValueError: Если n < 0
+        """
     if n < 0:
         raise ValueError('n must be positive')
     if n <= 1:
@@ -11,6 +24,15 @@ def fibo(n: int) -> int:
 
 #фибоначчи рекурсивно
 def fibo_recursive(n):
+    """
+        Вычисляет n-ое число Фибоначчи рекурсивным методом.
+        Args:
+            n (int): Номер числа Фибоначчи (должен быть неотрицательным)
+        Returns:
+            int: n-ое число Фибоначчи
+        Raises:
+            ValueError: Если n < 0
+        """
     if n < 0:
         raise ValueError('n must be positive')
     if n <= 1:
@@ -21,6 +43,15 @@ def fibo_recursive(n):
 
 #факториал
 def factorial(n: int) -> int:
+    """
+        Вычисляет факториал числа n итеративным методом.
+        Args:
+            n (int): Число для вычисления факториала (должно быть неотрицательным)
+        Returns:
+            int: Факториал числа n
+        Raises:
+            ValueError: Если n < 0
+        """
     if n<0:
         raise ValueError('Negative numbers are not allowed')
     if n == 0:
@@ -33,6 +64,15 @@ def factorial(n: int) -> int:
 
 #факториал рекурсивно
 def factorial_recursive(n: int) -> int:
+    """
+        Вычисляет факториал числа n рекурсивным методом.
+        Args:
+            n (int): Число для вычисления факториала (должно быть неотрицательным)
+        Returns:
+            int: Факториал числа n
+        Raises:
+            ValueError: Если n < 0
+        """
     if n<0:
         raise ValueError('Negative numbers are not allowed')
     if n == 0:

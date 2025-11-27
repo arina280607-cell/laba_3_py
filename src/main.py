@@ -1,4 +1,7 @@
-#тут мы будем проверять насколько быстро работают сортировки в сравнении собычным sort()
+"""
+Главный модуль для сравнения производительности алгоритмов сортировки.
+Тестирует различные алгоритмы на массивах разного размера и типа.
+"""
 import time
 import random
 from typing import List, Callable
@@ -6,14 +9,28 @@ from src.sorting import bubble_sort, quick_sort, counting_sort, radix_sort, buck
 
 # функция для тестирования скорости
 def benchmark_sort(sort_func: Callable, data: List, name: str) -> float:
+    """
+        Измеряет время выполнения функции сортировки.
+        Args:
+            sort_func (Callable): Функция сортировки для тестирования
+            data (List): Данные для сортировки
+            name (str): Название алгоритма для отображения
+        Returns:
+            float: Время выполнения в секундах
+        """
     start_time = time.perf_counter()
-    sort_func(data.copy())
+    sort_func(data.copy()) # Используем копию чтобы не изменять исходные данные
     end_time = time.perf_counter()
     return end_time - start_time
 
 def compare_sorts():
+    """
+        Сравнивает производительность различных алгоритмов сортировки
+        на массивах разного размера.
+    """
     sizes = [100, 500, 1000]
     for size in sizes:
+        print(f"\n--- Размер массива: {size} элементов ---")
         #список случайных чисел для наших сортировок
         int_data = [random.randint(0, 1000) for _ in range(size)]
         #список случайных чисел для работы с сортировкой bucket
@@ -27,7 +44,7 @@ def compare_sorts():
             (heap_sort,'heap', int_data),
             (sorted, "sort standarted", int_data),
         ]
-
+        # Список алгоритмов для вещественных данных
         if size <=500:
             float_sorts=[(bucket_sort, "bucket", float_data)]
         else:

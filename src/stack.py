@@ -3,9 +3,13 @@
 # b.Стек на list
 
 class Stack:
+    """
+        Реализация стека (LIFO - Last In, First Out) на основе списка.
+    """
+
     def __init__(self):
         self.items = []
-    def push(self, item):
+    def push(self, item: int):
         #добавление элемента 'наверх'
         self.items.append(item)
     def pop(self):
@@ -26,6 +30,9 @@ class Stack:
 # 2. Очередь
 # b. Очередь на list
 class Queue:
+    """
+        Реализация очереди (FIFO - First In, First Out) на основе списка.
+    """
     def __init__(self):
         self.items = []
     def enqueue(self, item: int):
