@@ -1,6 +1,4 @@
 import unittest
-
-from src import stack
 from src.stack import Stack
 
 class TestStack(unittest.TestCase):

@@ -22,3 +22,23 @@ class Stack:
         return self.items == []
     def __len__(self):
         return len(self.items)
+
+# 2. Очередь
+# b. Очередь на list
+class Queue:
+    def __init__(self):
+        self.items = []
+    def enqueue(self, item: int):
+        self.items.append(item) #добавление элемента в очередь
+    def dequeue(self):
+        if self.is_empty():
+            raise IndexError('Queue is empty')
+        return self.items.pop(0) #удаление элемента из очереди или вызывает исключение при пустой очереди
+    def is_empty(self):
+        return self.items == []
+    def __len__(self):
+        return len(self.items)
+    def peek(self):
+        if self.is_empty():
+            raise IndexError('Queue is empty')
+        return self.items[0]
